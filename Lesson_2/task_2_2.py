@@ -13,28 +13,17 @@
 import json
 
 
-def write_order_to_json(dct):
+def write_order_to_json(item, quantity, price, buyer, date):
+    my_dict = {'item':item, 'quantity':quantity, 'price':price, 'buyer':buyer, 'date':date}
     with open('orders.json') as json_file:
         data = json.load(json_file)
-    data['orders'].append(dct)
+    data['orders'].append(my_dict)
     with open('orders.json', 'w', encoding='utf-8') as file_n:
         json.dump(data, file_n, indent=4, ensure_ascii=False)
 
 
-order = {'item': 'Молоко',
-         'quantity': 23,
-         'price': 33,
-         'buyer': 'Евгений',
-         'date': "21.12.2021"
-         }, \
-        {'item': 'Сыр',
-             'quantity': 3,
-             'price': 55,
-             'buyer': 'Евгений',
-             'date': "21.12.2021"
-             }
 
-write_order_to_json(order)
+write_order_to_json('молоко', 5, 352, 'Евгений', '12.12.2011')
 
 with open('orders.json', encoding='utf-8') as f_n:
     print(f_n.read())
