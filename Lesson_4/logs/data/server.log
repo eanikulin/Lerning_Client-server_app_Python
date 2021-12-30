@@ -1,0 +1,5 @@
+2021-12-31 01:56:37,826 CRITICAL   server_logs_config.py Критическая ошибка
+2021-12-31 01:56:37,826 ERROR      server_logs_config.py Ошибка
+2021-12-31 01:56:37,826 DEBUG      server_logs_config.py Отладочная информация
+2021-12-31 01:56:37,826 INFO       server_logs_config.py Информационное сообщение
+2021-12-31 01:56:37,826 WARNING    server_logs_config.py Внимание
