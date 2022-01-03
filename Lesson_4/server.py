@@ -17,7 +17,7 @@ log_server = logging.getLogger('server')
 def process_client_msg(client_message):
     if data['ACTION'] in client_message and client_message[data['ACTION']] == data['PRESENCE'] and data[
         'TIME'] in client_message \
-            and data['USER'] in client_message and client_message[data['USER']][data['ACCOUNT_NAME']] == 'Sergey':
+            and data['USER'] in client_message and client_message[data['USER']][data['ACCOUNT_NAME']] == 'Evgeny':
         return {data['RESPONSE']: 200}
     return {
         data['RESPOND_FAULT_IP_ADDRESS']: 400,
@@ -27,11 +27,6 @@ def process_client_msg(client_message):
 
 def server_main():
     print('Сервер запущен')
-    log_server.critical('Критическая ошибка')
-    log_server.error('Ошибка')
-    log_server.debug('Отладочная информация')
-    log_server.info('Информационное сообщение')
-    log_server.warning('Внимание')
     arg_parser = argparse.ArgumentParser()
     arg_parser.add_argument('-p', type=int, default=data['DEFAULT_PORT'])
     arg_parser.add_argument('-a', type=str, default='')
