@@ -7,6 +7,9 @@ import time
 import argparse
 import yaml
 from utils import get_message, send_message
+import logging
+
+log_client = logging.getLogger('client')
 
 with open('config.yaml', encoding='utf-8') as conf_file:
     data = yaml.load(conf_file, Loader=yaml.FullLoader)
@@ -27,8 +30,11 @@ def create_presence_msg(port=data['DEFAULT_PORT'], acc_name='Evgeny'):
 def server_process_answer(message_server):
     if data['RESPONSE'] in message_server:
         if message_server[data["RESPONSE"]] == 200:
+            log_client.info(f'Успешно 200 : OK')
             return '200 : OK'
+        log_client.critical(f'Ошибка 400 {message_server[data["RESPONSE"]]}')
         return f'400 : {message_server[data["RESPONSE"]]}'
+    log_client.critical(f'Ошибка: невверное значение')
     raise ValueError
 
 
@@ -45,7 +51,8 @@ def client_main():
         if not (1024 < server_port < 65535):
             raise ValueError
     except ValueError:
-        print('В качестве порта может быть указано только число в диапазоне от 1024 до 65535.')
+        # print('В качестве порта может быть указано только число в диапазоне от 1024 до 65535.')
+        log_client.critical(f'Ошибка недопустимый порт {args_parse.server_port}')
         sys.exit(1)
 
     trans_port = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -56,7 +63,8 @@ def client_main():
         answer = server_process_answer(get_message(trans_port))
         print(f"Ответ => {answer}")
     except (ValueError, json.JSONDecodeError):
-        print('Не удалось декодировать сообщение сервера.')
+        log_client.error(f'Ошибка не удалось декодировать сообщение сервера {server_address}')
+        # print('Не удалось декодировать сообщение сервера.')
 
 
 if __name__ == '__main__':
