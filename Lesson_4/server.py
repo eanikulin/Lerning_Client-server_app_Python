@@ -5,6 +5,7 @@ import sys
 import json
 import argparse
 import yaml
+import logs.server_logs_config
 from utils import get_message, send_message
 import logging
 

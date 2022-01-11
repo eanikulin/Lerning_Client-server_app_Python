@@ -6,6 +6,7 @@ import socket
 import time
 import argparse
 import yaml
+import logs.client_logs_config
 from utils import get_message, send_message
 import logging
 

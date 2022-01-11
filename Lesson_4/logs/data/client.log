@@ -3,3 +3,4 @@
 2021-12-31 01:56:32,611 DEBUG      client_logs_config.py Отладочная информация
 2021-12-31 01:56:32,611 INFO       client_logs_config.py Информационное сообщение
 2021-12-31 01:56:32,611 WARNING    client_logs_config.py Внимание
+2022-01-11 17:35:02,235 INFO       client.py  Успешно 200 : OK
