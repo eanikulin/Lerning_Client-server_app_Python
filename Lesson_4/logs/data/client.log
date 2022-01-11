@@ -4,3 +4,45 @@
 2021-12-31 01:56:32,611 INFO       client_logs_config.py Информационное сообщение
 2021-12-31 01:56:32,611 WARNING    client_logs_config.py Внимание
 2022-01-11 17:35:02,235 INFO       client.py  Успешно 200 : OK
+2022-01-11 17:49:31,865 DEBUG      D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py  create_presence_msg вызвана из функции client_main в модуле D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py с аргументами: (7777,); {}
+2022-01-11 17:49:31,866 DEBUG      D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py  server_process_answer вызвана из функции client_main в модуле D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py с аргументами: ({'response': 200},); {}
+2022-01-11 17:49:31,867 INFO       D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py Успешно 200 : OK
+2022-01-11 17:49:40,865 DEBUG      D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py  create_presence_msg вызвана из функции client_main в модуле D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py с аргументами: (7777,); {}
+2022-01-11 17:49:40,866 DEBUG      D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py  server_process_answer вызвана из функции client_main в модуле D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py с аргументами: ({'response': 200},); {}
+2022-01-11 17:49:40,866 INFO       D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py Успешно 200 : OK
+2022-01-11 17:49:42,155 DEBUG      D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py  create_presence_msg вызвана из функции client_main в модуле D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py с аргументами: (7777,); {}
+2022-01-11 17:49:42,156 DEBUG      D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py  server_process_answer вызвана из функции client_main в модуле D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py с аргументами: ({'response': 200},); {}
+2022-01-11 17:49:42,156 INFO       D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py Успешно 200 : OK
+2022-01-11 17:49:43,555 DEBUG      D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py  create_presence_msg вызвана из функции client_main в модуле D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py с аргументами: (7777,); {}
+2022-01-11 17:49:43,556 DEBUG      D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py  server_process_answer вызвана из функции client_main в модуле D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py с аргументами: ({'response': 200},); {}
+2022-01-11 17:49:43,556 INFO       D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py Успешно 200 : OK
+2022-01-11 17:51:51,545 DEBUG      D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py  create_presence_msg вызвана из функции client_main в модуле D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py с аргументами: (7777,); {}
+2022-01-11 17:51:51,546 DEBUG      D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py  server_process_answer вызвана из функции client_main в модуле D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py с аргументами: ({'response': 200},); {}
+2022-01-11 17:51:51,546 INFO       D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py Успешно 200 : OK
+2022-01-11 17:51:52,692 DEBUG      D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py  create_presence_msg вызвана из функции client_main в модуле D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py с аргументами: (7777,); {}
+2022-01-11 17:51:52,693 DEBUG      D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py  server_process_answer вызвана из функции client_main в модуле D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py с аргументами: ({'response': 200},); {}
+2022-01-11 17:51:52,693 INFO       D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py Успешно 200 : OK
+2022-01-11 17:54:10,893 DEBUG      D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py  create_presence_msg вызвана из функции client_main в модуле D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py с аргументами: (7777,); {}
+2022-01-11 17:54:10,893 DEBUG      D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py  server_process_answer вызвана из функции client_main в модуле D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py с аргументами: ({'response': 200},); {}
+2022-01-11 17:54:10,894 INFO       D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py Успешно 200 : OK
+2022-01-11 17:54:19,302 DEBUG      D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py  create_presence_msg вызвана из функции client_main в модуле D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py с аргументами: (7777,); {}
+2022-01-11 17:54:19,303 DEBUG      D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py  server_process_answer вызвана из функции client_main в модуле D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py с аргументами: ({'response': 200},); {}
+2022-01-11 17:54:19,303 INFO       D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py Успешно 200 : OK
+2022-01-11 17:54:20,757 DEBUG      D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py  create_presence_msg вызвана из функции client_main в модуле D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py с аргументами: (7777,); {}
+2022-01-11 17:54:20,758 DEBUG      D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py  server_process_answer вызвана из функции client_main в модуле D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py с аргументами: ({'response': 200},); {}
+2022-01-11 17:54:20,758 INFO       D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py Успешно 200 : OK
+2022-01-11 19:36:14,653 DEBUG      D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py  create_presence_msg вызвана из функции client_main в модуле D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py с аргументами: (7777,); {}
+2022-01-11 19:36:14,654 DEBUG      D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py  server_process_answer вызвана из функции client_main в модуле D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py с аргументами: ({'response': 200},); {}
+2022-01-11 19:36:14,654 INFO       D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py Успешно 200 : OK
+2022-01-11 19:36:17,915 DEBUG      D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py  create_presence_msg вызвана из функции client_main в модуле D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py с аргументами: (7777,); {}
+2022-01-11 19:36:17,916 DEBUG      D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py  server_process_answer вызвана из функции client_main в модуле D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py с аргументами: ({'response': 200},); {}
+2022-01-11 19:36:17,916 INFO       D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py Успешно 200 : OK
+2022-01-11 19:37:49,930 DEBUG      D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py  create_presence_msg вызванахххх из функции client_main в модуле D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py с аргументами: (7777,); {}
+2022-01-11 19:37:49,931 DEBUG      D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py  server_process_answer вызванахххх из функции client_main в модуле D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py с аргументами: ({'response': 200},); {}
+2022-01-11 19:37:49,931 INFO       D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py Успешно 200 : OK
+2022-01-11 19:40:08,738 DEBUG      decors.py   create_presence_msg вызванах из функции client_main в модуле D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py с аргументами: (7777,); {}
+2022-01-11 19:40:08,739 DEBUG      decors.py   server_process_answer вызванах из функции client_main в модуле D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py с аргументами: ({'response': 200},); {}
+2022-01-11 19:40:08,739 INFO       client.py  Успешно 200 : OK
+2022-01-11 19:41:55,983 DEBUG      D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py  create_presence_msg вызванах из функции client_main в модуле D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py с аргументами: (7777,); {}
+2022-01-11 19:41:55,984 DEBUG      D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py  server_process_answer вызванах из функции client_main в модуле D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py с аргументами: ({'response': 200},); {}
+2022-01-11 19:41:55,984 INFO       D:\PyCharm\Lerning_Client-server_app_Python\Lesson_4\client.py Успешно 200 : OK

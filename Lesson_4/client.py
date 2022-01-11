@@ -7,6 +7,8 @@ import time
 import argparse
 import yaml
 import logs.client_logs_config
+# from decorators import Log
+from decors import logs
 from utils import get_message, send_message
 import logging
 
@@ -15,7 +17,7 @@ log_client = logging.getLogger('client')
 with open('config.yaml', encoding='utf-8') as conf_file:
     data = yaml.load(conf_file, Loader=yaml.FullLoader)
 
-
+@logs(log_client)
 def create_presence_msg(port=data['DEFAULT_PORT'], acc_name='Evgeny'):
     message_output = {
         data['ACTION']: data['PRESENCE'],
@@ -27,7 +29,7 @@ def create_presence_msg(port=data['DEFAULT_PORT'], acc_name='Evgeny'):
     }
     return message_output
 
-
+@logs(log_client)
 def server_process_answer(message_server):
     if data['RESPONSE'] in message_server:
         if message_server[data["RESPONSE"]] == 200:
