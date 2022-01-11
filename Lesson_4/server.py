@@ -5,6 +5,8 @@ import sys
 import json
 import argparse
 import yaml
+import logs.server_logs_config
+from decors import Log
 from utils import get_message, send_message
 import logging
 
@@ -13,7 +15,7 @@ with open('config.yaml', encoding='utf-8') as conf_file:
 
 log_server = logging.getLogger('server')
 
-
+@Log(log_server)
 def process_client_msg(client_message):
     if data['ACTION'] in client_message and client_message[data['ACTION']] == data['PRESENCE'] and data[
         'TIME'] in client_message \
