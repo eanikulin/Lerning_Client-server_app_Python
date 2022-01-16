@@ -23,6 +23,7 @@ CLIENT_MODE = {
     'listen': 'receiving messages'
 }
 
+
 @logs(log_client)
 def create_presence_msg(message=None, action=data['PRESENCE'], port=data['DEFAULT_PORT'], acc_name='Evgeny'):
     message_output = {
@@ -37,6 +38,7 @@ def create_presence_msg(message=None, action=data['PRESENCE'], port=data['DEFAUL
         message_output[data['MESSAGE_TEXT']] = message
     return message_output
 
+
 @logs(log_client)
 def input_message(client_socket):
     while True:
@@ -50,6 +52,7 @@ def input_message(client_socket):
         exit(0)
     return message
 
+
 @logs(log_client)
 def server_process_answer(message_server):
     if data['RESPONSE'] in message_server:
@@ -61,12 +64,16 @@ def server_process_answer(message_server):
     log_client.critical(f'Ошибка: невверное значение')
     raise ValueError
 
+
 @logs(log_client)
 def message_from_server(server_message):
-    if data['ACTION'] in server_message and server_message[data['ACTION']] == data['MESSAGE'] and data['SENDER'] in server_message \
+    if data['ACTION'] in server_message and server_message[data['ACTION']] == data['MESSAGE'] and data[
+        'SENDER'] in server_message \
             and data['MESSAGE_TEXT'] in server_message:
-        print(f'Получено сообщение от пользователя {server_message[data["SENDER"]]}: {server_message[data["MESSAGE_TEXT"]]}')
-        log_client.info(f'Получено сообщение от пользователя {server_message[data["SENDER"]]}:{server_message[data["MESSAGE_TEXT"]]}')
+        print(
+            f'Получено сообщение от пользователя {server_message[data["SENDER"]]}: {server_message[data["MESSAGE_TEXT"]]}')
+        log_client.info(
+            f'Получено сообщение от пользователя {server_message[data["SENDER"]]}:{server_message[data["MESSAGE_TEXT"]]}')
     else:
         log_client.error(f'Получено некорректное сообщение с сервера: {server_message}')
 
@@ -80,15 +87,15 @@ def mainloop(client_mode, transport, server_address, server_port):
                 message = create_presence_msg(input_message(transport), data['MESSAGE'], server_port)
                 send_message(transport, message)
                 log_client.info(f'Отправлено сообщение {message["action"]} '
-                              f'от пользователя {message[data["USER"]][data["ACCOUNT_NAME"]]}')
+                                f'от пользователя {message[data["USER"]][data["ACCOUNT_NAME"]]}')
             elif client_mode == 'listen':
                 message_from_server(get_message(transport))
         except (ConnectionResetError, ConnectionError, ConnectionAbortedError):
             log_client.error(f'Соединение с сервером {server_address} было потеряно.')
             sys.exit(1)
 
-def client_main():
 
+def client_main():
     for_parse = argparse.ArgumentParser()
     for_parse.add_argument('port', nargs='?', type=int, default=data['DEFAULT_PORT'])
     for_parse.add_argument('address', nargs='?', type=str, default=data['DEFAULT_IP_ADDRESS'])
@@ -117,8 +124,8 @@ def client_main():
     message_to_server = create_presence_msg(server_port)
     send_message(trans_port, message_to_server)
     log_client.info(f'Сообщение отправлено {message_to_server[data["ACTION"]]} '
-                  f'от пользователя {message_to_server[data["USER"]][data["ACCOUNT_NAME"]]} '
-                  f'для сервера {server_address}')
+                    f'от пользователя {message_to_server[data["USER"]][data["ACCOUNT_NAME"]]} '
+                    f'для сервера {server_address}')
     try:
         answer = server_process_answer(get_message(trans_port))
         print(f"Ответ => {answer}")
