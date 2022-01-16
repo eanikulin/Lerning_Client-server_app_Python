@@ -8,6 +8,7 @@ import argparse
 import yaml
 import logs.client_logs_config
 from decors import logs
+# from decors import Log
 import errors as errors_user
 from utils import get_message, send_message
 import logging
@@ -60,12 +61,12 @@ def server_process_answer(message_server):
     log_client.critical(f'Ошибка: невверное значение')
     raise ValueError
 
-@logs(data['MESSAGE'])
+@logs(log_client)
 def message_from_server(server_message):
     if data['ACTION'] in server_message and server_message[data['ACTION']] == data['MESSAGE'] and data['SENDER'] in server_message \
             and data['MESSAGE_TEXT'] in server_message:
-        print(f'Получено сообщение от пользователя {server_message[data["SENDER"]]}:\n{server_message[data["MESSAGE_TEXT"]]}')
-        log_client.info(f'Получено сообщение от пользователя {server_message[data["SENDER"]]}:\n{server_message[data["MESSAGE_TEXT"]]}')
+        print(f'Получено сообщение от пользователя {server_message[data["SENDER"]]}: {server_message[data["MESSAGE_TEXT"]]}')
+        log_client.info(f'Получено сообщение от пользователя {server_message[data["SENDER"]]}:{server_message[data["MESSAGE_TEXT"]]}')
     else:
         log_client.error(f'Получено некорректное сообщение с сервера: {server_message}')
 
@@ -76,7 +77,7 @@ def mainloop(client_mode, transport, server_address, server_port):
     while True:
         try:
             if client_mode == 'send':
-                message = create_presence_msg(data['MESSAGE'], input_message(transport), server_port)
+                message = create_presence_msg(input_message(transport), data['MESSAGE'], server_port)
                 send_message(transport, message)
                 log_client.info(f'Отправлено сообщение {message["action"]} '
                               f'от пользователя {message[data["USER"]][data["ACCOUNT_NAME"]]}')

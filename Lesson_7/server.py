@@ -30,7 +30,7 @@ def process_client_msg(client_message, messages_list, client):
             return
     send_message(client,
                  {
-                     data['RESPOND_FAULT_IP_ADDRESS']: 400,
+                     data['RESPONSE']: 400,
                      data['ERROR']: 'Bad Request'
                  })
     return
