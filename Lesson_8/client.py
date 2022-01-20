@@ -66,6 +66,12 @@ class Client:
                         server_message.get(data['DESTINATION']) == self.client_name:
                     LOG.debug(f'{self.client_name}: Получено сообщение от {server_message[data["SENDER"]]}')
                     print(f'\n<<{server_message[data["SENDER"]]}>> : {server_message[data["MESSAGE_TEXT"]]}')
+
+                elif server_message.get(data['ACTION']) == data['MESSAGE'] and \
+                        data['SENDER'] in server_message and data['MESSAGE_TEXT'] in server_message and \
+                        server_message.get(data['DESTINATION']) != self.client_name:
+                    LOG.debug(f'{self.client_name}: Получено сообщение от {server_message[data["SENDER"]]}')
+                    print(f'\n<<{server_message[data["SENDER"]]}>> : {server_message[data["MESSAGE_TEXT"]]}')
                 else:
                     LOG.debug(f'{self.client_name}: Получено сообщение от сервера о некорректном запросе')
                     print(f'\nПолучено сообщение от сервера о некорректном запросе: {server_message}')
@@ -157,13 +163,20 @@ class Client:
     @Log(LOG)
     def input_message():
         while True:
-            to_client = input('Введите имя пользователя-адресата:')
+            to_client = input('Введите имя пользователя-адресата, чтобы отправить личное сообщние или оставьте пустым, чтобы отправить в общий чат:')
             message = input('Введите сообщение:')
             if to_client.strip() and message.strip():
                 break
-            else:
-
-                print('Имя пользователя и сообщение не может быть пустым!')
+            elif not to_client:
+                to_client = ' '
+                break
+            elif not message:
+                message = ' '
+                break
+            elif not message and not to_client:
+                message = ' '
+                to_client = ' '
+                break
         return to_client, message
 
     @staticmethod

@@ -71,6 +71,14 @@ class Server:
                       f'для клиента {message[data["DESTINATION"]]} добавлено в очередь сообщений')
             return
 
+        if message.get(data['ACTION']) == data['MESSAGE'] and data['MESSAGE_TEXT'] in message and \
+                data['SENDER'] in message and data['DESTINATION'] in message and \
+                message.get(data['DESTINATION']) not in self.clients_names:
+            self.messages_deque.append(message)
+            LOG.debug(f'Сообщение клиента {message[data["SENDER"]]} '
+                      f'для клиента {message[data["DESTINATION"]]} добавлено в очередь сообщений')
+            return
+
         if message.get(data['ACTION']) == data['EXIT'] and data['ACCOUNT_NAME'] in message:
             self.clients_list.remove(self.clients_names[message[data['ACCOUNT_NAME']]])
             self.clients_names[message[data['ACCOUNT_NAME']]].close()
@@ -93,16 +101,25 @@ class Server:
     def send_messages_to_clients(self):
         while self.messages_deque:
             message = self.messages_deque.popleft()
-            waiting_client = self.clients_names[message[data['DESTINATION']]]
-            if waiting_client in self.send_data_list:
-                try:
-                    send_message(waiting_client, message)
-                    LOG.info(
-                        f'Сообщение клиента {message[data["SENDER"]]} отправлено клиенту {message[data["DESTINATION"]]}')
-                except Exception:
-                    LOG.info(f'Клиент {waiting_client.getpeername()} отключился от сервера.')
-                    waiting_client.close()
-                    self.clients_list.remove(waiting_client)
+            if message[data['DESTINATION']] not in self.clients_names.keys():
+                for waiting_client in self.send_data_list:
+                    try:
+                        send_message(waiting_client, message)
+                    except Exception:
+                        LOG.info(f'Клиент {waiting_client.getpeername()} отключился от сервера.')
+                        waiting_client.close()
+
+            else:
+                waiting_client = self.clients_names[message[data['DESTINATION']]]
+                if waiting_client in self.send_data_list:
+                    try:
+                        send_message(waiting_client, message)
+                        LOG.info(
+                            f'Сообщение клиента {message[data["SENDER"]]} отправлено клиенту {message[data["DESTINATION"]]}')
+                    except Exception:
+                        LOG.info(f'Клиент {waiting_client.getpeername()} отключился от сервера.')
+                        waiting_client.close()
+                        self.clients_list.remove(waiting_client)
 
     def run(self):
         while True:
