@@ -11,8 +11,11 @@ import logging
 import select
 from collections import deque
 from socket import socket, AF_INET, SOCK_STREAM
+import os
 
-with open('config.yaml', encoding='utf-8') as conf_file:
+def_path = os.getcwd()
+
+with open(def_path + '\config.yaml', encoding='utf-8') as conf_file:
     data = yaml.load(conf_file, Loader=yaml.FullLoader)
 
 LOG = logging.getLogger('server')

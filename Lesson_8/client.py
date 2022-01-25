@@ -1,6 +1,5 @@
 # client
 
-# import data.variables as variables
 from data.utils import get_message, send_message
 import errors_user as errors_user
 
@@ -13,8 +12,11 @@ import argparse
 import logging
 from decors import Log
 import threading
+import os
 
-with open('config.yaml', encoding='utf-8') as conf_file:
+def_path = os.getcwd()
+
+with open(def_path + '\config.yaml', encoding='utf-8') as conf_file:
     data = yaml.load(conf_file, Loader=yaml.FullLoader)
 
 LOG = logging.getLogger('client')
@@ -163,7 +165,8 @@ class Client:
     @Log(LOG)
     def input_message():
         while True:
-            to_client = input('Введите имя пользователя-адресата, чтобы отправить личное сообщние или оставьте пустым, чтобы отправить в общий чат:')
+            to_client = input(
+                'Введите имя пользователя-адресата, чтобы отправить личное сообщние или оставьте пустым, чтобы отправить в общий чат:')
             message = input('Введите сообщение:')
             if to_client.strip() and message.strip():
                 break
